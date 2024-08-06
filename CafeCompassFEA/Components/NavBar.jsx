@@ -11,10 +11,10 @@ export default function NavBar() {
     <ul className='nav-links'>
       <li className='nav-links__account'>Your Account</li>
       <li className='nav-links__title'><h1>
-        <Link path='/'>Cafe Compass</Link></h1></li>
-      <li className='nav-links__bloggers'><Link path='/bloggers'>Bloggers
+        <Link to='/'>Cafe Compass</Link></h1></li>
+      <li className='nav-links__bloggers'><Link to='/bloggers'>Bloggers
       </Link></li>
-      <li className='nav-links__cafes'><Link path='/cafes'>Cafes</Link></li>
+      <li className='nav-links__cafes'><Link to='/cafes'>Cafes</Link></li>
     </ul>
    </nav>
    </>

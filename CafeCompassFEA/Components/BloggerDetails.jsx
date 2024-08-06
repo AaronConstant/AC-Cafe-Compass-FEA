@@ -7,16 +7,25 @@ const API = import.meta.env.VITE_BASE_URL
 export default function BloggerDetails() {
     const { id } = useParams()
     const [bloggerdetails, setBloggerDetails] = useState()
+    const [cafedetails, setCafeDetails] = useState()
 
     useEffect(()=> {
-        fetch(`${API}/${id}`)
+        fetch(`${API}/${id}/reviews`)
         .then(res=> res.json())
         .then(res => setBloggerDetails(res))
-    })
+    },[])
 
-    console.log(bloggerdetails)
+    // useEffect(()=> {
+    //     fetch(`${API}/cafes`)
+    //     .then(res => res.json())
+    //     .then(res=>)
+    // },[])
+
+
+
+
 
   return (
     <div>BloggerDetails</div>
-  )``
+  )
 }

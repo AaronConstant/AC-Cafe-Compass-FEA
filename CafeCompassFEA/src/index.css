@@ -9,4 +9,10 @@
 li, a {
   list-style-type: none;
   text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+a:hover{
+  color: gray;
 }
