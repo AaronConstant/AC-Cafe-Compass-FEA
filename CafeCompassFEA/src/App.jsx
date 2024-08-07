@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import './App.css'
 
 import NavBar from '../Components/NavBar'
@@ -10,6 +9,7 @@ import Cafes from '../Pages/Cafes'
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import BloggerDetails from '../Components/BloggerDetails'
+import New from '../Pages/New'
 
 const API = import.meta.env.VITE_BASE_URL
 
@@ -24,11 +24,12 @@ function App() {
   <NavBar/>
   <Routes>
 
-    <Route path='/' element={<Home/>}/>
-    <Route path='/bloggers' element={<Bloggers/>}/>
-    <Route path='/bloggers/:id' element ={<BloggerDetails/>}/>
+    <Route path='/' element={ <Home/> }/>
+    <Route path='/bloggers' element={ <Bloggers/> }/>
+    <Route path='/new-blogger'element={<New/>}/>
+    <Route path='/bloggers/:id' element ={ <BloggerDetails/> }/>
     <Route path='/cafes' element={<Cafes/>}/>
-    <Route path='/bloggers/:cafe_id/reviews'/>
+    {/* <Route path='/bloggers/:cafe_id/reviews' element={}/> */}
 
   </Routes>
   <Footer/>

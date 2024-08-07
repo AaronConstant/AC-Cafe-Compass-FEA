@@ -1,0 +1,75 @@
+.new-blogger-form {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+  }
+
+  legend {
+    text-align: center;
+  }
+
+  fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  
+    input[type="checkbox"] {
+      margin-left: 10px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: center;
+  
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="datetime-local"],
+    input[type="checkbox"],
+    button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  
+      &:focus {
+        border-color: #00aaff;
+        box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+      }
+    }
+  
+    input[type="checkbox"] {
+      width: auto;
+    }
+  
+    button {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0088cc;
+      }
+    }
+  }

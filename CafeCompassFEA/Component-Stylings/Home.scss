@@ -1,4 +1,5 @@
 .container {
+    position:relative;
     background-color: rgb(255, 255, 255);
     height: 100vh;
     width: 100%;
@@ -9,7 +10,7 @@
       ". main main ."
       "bloggers bloggers cafe cafe";
   }
-  main {
+  .content {
     grid-area: main;
     background-color: aquamarine;
   }
