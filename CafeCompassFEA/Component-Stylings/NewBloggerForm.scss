@@ -1,9 +1,13 @@
 .new-blogger-form {
-    position: absolute;
+    margin: 100px auto;
+    width: 30rem;
+    height: 100vh;
     top: 15%;
     left: 40%;
   }
-
+  .new-blogger-title {
+    font-family: fantasy;
+  }
   legend {
     text-align: center;
   }
@@ -29,7 +33,7 @@
 
   h2 {
     text-align: center;
-    color: #333;
+    color: #bb4242;
     margin-bottom: 20px;
   }
   

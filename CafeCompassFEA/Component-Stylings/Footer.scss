@@ -10,11 +10,12 @@
 //   }
 
   .footer {
+    position: fixed;
+    bottom: 1px;
     background-color: #28a745;
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
   }

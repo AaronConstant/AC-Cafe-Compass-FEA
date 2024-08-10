@@ -17,18 +17,22 @@ export default function Bloggers() {
     }, []);
 
 
+
     return (
     <>
         <h1 className='bloggers-title'> Certified CC Bloggers</h1>
+            <div className='btn-box'>
 
-        <div className='bloggers-container'>
             <Link to='/new-blogger'>
-            <h2>Add New Blogger</h2>
+            <h2 className='add-blogger'>Add New Blogger</h2>
             
             </Link>
+
+            </div>
+        <div className='bloggers-control-container'>
             
                 { bloggers.map(blogger => {
-                    return <Blogger key={blogger.id} blogger={blogger} id={blogger.id}/>
+                    return <Blogger key={blogger.id} blogger={blogger} id={blogger.id}/>                    
                 }
                 )}
         </div>

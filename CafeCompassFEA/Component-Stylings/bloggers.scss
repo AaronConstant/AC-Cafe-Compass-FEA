@@ -1,27 +1,48 @@
-.bloggers-container {
+.bloggers-control-container {
     height: 100vh;
     width: 100vw;
     display: flex;
     gap: 10px;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     border: 2px solid rgb(194, 60, 60);
     justify-content: center;
     align-items: center;
 }
 
 .bloggers-title {
-    margin: 20px;
+    margin: 10px;
     text-align: center;
 }
+
+.btn-box {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-blogger {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    background: rgb(47, 53, 226);
+    padding: 10px;
+    border-radius: 20px;
+    width: 200px;
+  }
 
 .blogger-details {
     display: grid;
     grid-template-columns: auto;
     margin: 20px;
     border: 1px solid black;
-    padding: 10px;
+    padding: 30px;
     border-radius: 20px;
-    width: 25%;
+    max-width: 45%;
     align-items: center;
     text-align: center;
 }

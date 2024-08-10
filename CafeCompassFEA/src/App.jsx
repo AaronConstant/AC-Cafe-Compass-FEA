@@ -14,11 +14,6 @@ import New from '../Pages/New'
 const API = import.meta.env.VITE_BASE_URL
 
 function App() {
-
-
-
-
-
   return (
     <>
   <NavBar/>
@@ -27,7 +22,7 @@ function App() {
     <Route path='/' element={ <Home/> }/>
     <Route path='/bloggers' element={ <Bloggers/> }/>
     <Route path='/new-blogger'element={<New/>}/>
-    <Route path='/bloggers/:id' element ={ <BloggerDetails/> }/>
+    <Route path='/bloggers/:id/reviews' element ={ <BloggerDetails/> }/>
     <Route path='/cafes' element={<Cafes/>}/>
     {/* <Route path='/bloggers/:cafe_id/reviews' element={}/> */}
 

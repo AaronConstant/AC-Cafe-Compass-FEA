@@ -54,7 +54,7 @@ export default function AddNewBlogger() {
       <form onSubmit={handleSubmit}>
         <fieldset>
 
-      <legend><h2>Add New Blogger</h2></legend>
+      <legend><h1 className='new-blogger-title'>⭐️ Add New Blogger ⭐️</h1></legend>
         <input
           type="text"
           name="first_name"
@@ -98,7 +98,7 @@ export default function AddNewBlogger() {
           placeholder="Gender Identity"
           />
         <input
-          type="datetime-local"
+          type="date"
           name="last_login"
           value={newBlogger.last_login}
           onChange={handleChange}
