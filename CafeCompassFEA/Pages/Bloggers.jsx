@@ -29,13 +29,15 @@ export default function Bloggers() {
             </Link>
 
             </div>
-        <div className='bloggers-control-container'>
-            
-                { bloggers.map(blogger => {
-                    return <Blogger key={blogger.id} blogger={blogger} id={blogger.id}/>                    
-                }
-                )}
-        </div>
+            <div className='bloggers-container1'>
+                <p>pickles</p>
+                <div className='bloggers-control-container'>
+                        { bloggers.map(blogger => {
+                            return <Blogger key={blogger.id} blogger={blogger} id={blogger.id}/>                    
+                        }
+                        )}
+                </div>
+            </div>
     </>
     );
 }

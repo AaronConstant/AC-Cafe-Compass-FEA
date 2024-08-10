@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import '../Component-Stylings/BloggerDetails.scss';
 
@@ -61,9 +61,9 @@ export default function BloggerDetails() {
       )}
 
       <section className='btn-selection'>
-        <button className='btn-selection__back basic'>Back</button>
-        <button className='btn-selection__edit basic'>Edit</button>
-        <button className='btn-selection__delete basic'>Delete</button>
+        <button className='btn-selection__back basic'><Link to='/'>Back</Link></button>
+        <button className='btn-selection__edit basic'><Link>Edit</Link></button>
+        <button className='btn-selection__delete basic'><Link>Delete</Link></button>
       </section>
     </div>
 
