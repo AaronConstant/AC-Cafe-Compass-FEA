@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+const API = import.meta.env.VITE_BASE_URL;
 
 export default function UpdateBlogger() {
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  const [newBlogger, setNewBlogger] = useState({
+  const [blogger, setBlogger] = useState({
     first_name: '', 
     last_name: '',
     username: '', 
@@ -15,19 +18,28 @@ export default function UpdateBlogger() {
     phone_number: ''
   });
 
+  useEffect(() => {
+    fetch(`${API}/bloggers/${id}`)
+      .then((res) => res.json())
+      .then((data) => setBlogger(data))
+      .catch((err) => console.error(err));
+  }, [id]);
+
+  console.log(blogger)
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewBlogger({ ...newBlogger, [name]: value });
+    setBlogger({ ...blogger, [name]: value });
   };
 
   const handleCheckboxChange = () => {
-    setNewBlogger({ ...newBlogger, membership_status: !newBlogger.membership_status });
+    setBlogger({ ...blogger, membership_status: !blogger.membership_status });
   };
 
-  const addBlogger = (newBlogger) => {
-    fetch(`${API}/bloggers`, {
-      method: 'POST',
-      body: JSON.stringify(newBlogger),
+  const updateBlogger = (updatedBlogger) => {
+    fetch(`${API}/bloggers/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedBlogger),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -42,82 +54,81 @@ export default function UpdateBlogger() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBlogger(newBlogger);
+    updateBlogger(blogger);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <fieldset>
-
-      <legend><h1 className='new-blogger-title'>⭐️ Add New Blogger ⭐️</h1></legend>
-        <input
-          type="text"
-          name="first_name"
-          value={newBlogger.first_name}
-          onChange={handleChange}
-          placeholder="First Name"
-          />
-        <input
-          type="text"
-          name="last_name"
-          value={newBlogger.last_name}
-          onChange={handleChange}
-          placeholder="Last Name"
-          />
-        <input
-          type="text"
-          name="username"
-          value={newBlogger.username}
-          onChange={handleChange}
-          placeholder="Username"
-          />
-        <input
-          type="password"
-          name="password"
-          value={newBlogger.password}
-          onChange={handleChange}
-          placeholder="Password"
-          />
-        <input
-          type="email"
-          name="email"
-          value={newBlogger.email}
-          onChange={handleChange}
-          placeholder="Email"
-          />
-        <input
-          type="text"
-          name="gender_identity"
-          value={newBlogger.gender_identity}
-          onChange={handleChange}
-          placeholder="Gender Identity"
-          />
-        <input
-          type="date"
-          name="last_login"
-          value={newBlogger.last_login}
-          onChange={handleChange}
-          placeholder="Last Login"
-          />
-        <label>
-          Membership Status:
+          <legend><h1 className='new-blogger-title'>⭐️ Update Blogger ⭐️</h1></legend>
           <input
-            type="checkbox"
-            name="membership_status"
-            checked={newBlogger.membership_status}
-            onChange={handleCheckboxChange}
-            />
-        </label>
-        <input
-          type="text"
-          name="phone_number"
-          value={newBlogger.phone_number}
-          onChange={handleChange}
-          placeholder="Phone Number"
+            type="text"
+            name="first_name"
+            value={blogger.first_name}
+            onChange={handleChange}
+            placeholder="First Name"
           />
-        <button type="submit">Add Blogger</button>
-          </fieldset>
+          <input
+            type="text"
+            name="last_name"
+            value={blogger.last_name}
+            onChange={handleChange}
+            placeholder="Last Name"
+          />
+          <input
+            type="text"
+            name="username"
+            value={blogger.username}
+            onChange={handleChange}
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            value={blogger.password}
+            onChange={handleChange}
+            placeholder="Password"
+          />
+          <input
+            type="email"
+            name="email"
+            value={blogger.email}
+            onChange={handleChange}
+            placeholder="Email"
+          />
+          <input
+            type="text"
+            name="gender_identity"
+            value={blogger.gender_identity}
+            onChange={handleChange}
+            placeholder="Gender Identity"
+          />
+          <input
+            type="date"
+            name="last_login"
+            value={blogger.last_login}
+            onChange={handleChange}
+            placeholder="Last Login"
+          />
+          <label>
+            Membership Status:
+            <input
+              type="checkbox"
+              name="membership_status"
+              checked={blogger.membership_status}
+              onChange={handleCheckboxChange}
+            />
+          </label>
+          <input
+            type="text"
+            name="phone_number"
+            value={blogger.phone_number}
+            onChange={handleChange}
+            placeholder="Phone Number"
+          />
+          <button type="submit">Update Blogger</button>
+        </fieldset>
       </form>
     </div>
   );

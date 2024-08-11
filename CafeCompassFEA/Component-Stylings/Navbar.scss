@@ -1,23 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Whisper&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
 }
+
+.first-span {
+    font-family: 'Whisper', cursive;
+    font-size: 100px;
+    padding: 14px;
+    color: rgb(179, 134, 30);
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.sec-span {
+    margin-left: 10px;
+}
+
 nav {
-    height: 8vh;
+    height:10vh;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0px 0px 24px 0px rgb(0, 0, 0);
+
     
 
-    img {
-        margin-top: 60px;
-        height: 200px;
-    }
+    // img {
+    //     margin-top: 60px;
+    //     height: 200px;
+    //     width: 255px;
+    // }
 }
 
 .nav-links {
     height: 100%;
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-between; 
     align-items: center;
+    padding-right: 14px;
     background: rgb(246,229,177);
-background: radial-gradient(circle, rgba(246,229,177,1) 0%, rgba(227,152,51,1) 100%);
-    font-family: fantasy;
+    background: radial-gradient(linear, rgba(246,229,177,1) 0%, rgba(227,152,51,1) 100%);
+    font-family:'Times New Roman', Times, serif;
+
+    .bc-link {
+        display: flex;
+        gap: 20px; 
+        margin: 10px;
+        list-style: none; 
+        }
+    
+        .bc-link li {
+        margin: 0 10px; 
+        }
+    
 }

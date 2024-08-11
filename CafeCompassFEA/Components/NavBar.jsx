@@ -1,7 +1,6 @@
 import React from 'react'
 import{ Link } from 'react-router-dom'
 import '../Component-Stylings/Navbar.scss'
-import logo from '../resource-pics/CCafeCompass.png'
 
 export default function NavBar() {
   
@@ -10,11 +9,12 @@ export default function NavBar() {
    <>
    <nav>
     <ul className='nav-links'>
-      <li className='nav-links__bloggers'><Link to='/bloggers'>Bloggers
-      </Link></li>
-      <li className='nav-links__title'><h1>
-        <Link to='/'><img src={logo} alt="CC-logo" /></Link></h1></li>
-      <li className='nav-links__cafes'><Link to='/cafes'>Cafes</Link></li>
+      <li className='nav-links__title'><h1><span className='first-span'>Cafe</span><span className='sec-span'>COMPASS</span></h1></li>
+      <ul className='bc-link'>
+      <li><Link to='/about'>About</Link></li>
+      <li><Link to='/bloggers'>Bloggers</Link></li>
+        <li><Link to='/cafes'>Cafes</Link></li>
+      </ul>
     </ul>
    </nav>
    </>
